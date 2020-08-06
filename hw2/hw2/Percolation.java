@@ -4,7 +4,7 @@ import edu.princeton.cs.algs4.WeightedQuickUnionUF;
 
 public class Percolation {
     private int size;
-    private boolean site[][];
+    private boolean[][] site;
     private int top;
     private int bottom;
     private WeightedQuickUnionUF uf;
@@ -53,7 +53,7 @@ public class Percolation {
         for (int[] surrounding: surroundings) {
             int adjacentRow = row + surrounding[0];
             int adjacentCol = col + surrounding[1];
-            if (adjacentRow >= 0 && adjacentCol < size) {
+            if (adjacentRow >= 0 && adjacentRow < size) {
                 if (adjacentCol >= 0 && adjacentCol < size) {
                     if (isOpen(adjacentRow, adjacentCol)) {
                         uf.union(xyTo1D(row, col), xyTo1D(adjacentRow, adjacentCol));

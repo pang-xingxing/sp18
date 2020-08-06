@@ -17,12 +17,12 @@ public class PercolationStats {
         int totalSites = N * N;
         for (int i = 0; i < T; i++) {
             int numOpenSites = 0;
-            Percolation Pf = pf.make(N);
-            while (!Pf.percolates()) {
+            Percolation pF = pf.make(N);
+            while (!pF.percolates()) {
                 int row = StdRandom.uniform(N);
                 int col = StdRandom.uniform(N);
-                if (!Pf.isOpen(row, col)) {
-                    Pf.open(row, col);
+                if (!pF.isOpen(row, col)) {
+                    pF.open(row, col);
                     numOpenSites += 1;
                 }
             }
